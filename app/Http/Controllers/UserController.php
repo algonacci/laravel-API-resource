@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\UserResource;
-use Illuminate\Http\Request;
 use App\Models\User;
 
 class UserController extends Controller
@@ -12,6 +11,7 @@ class UserController extends Controller
     {
         $users = User::all();
         return UserResource::collection($users);
+        // return new UserResource($users);
     }
 
     public function store()
